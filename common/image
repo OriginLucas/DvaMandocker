@@ -1,0 +1,12 @@
+res = {
+                "containers": unit.attrs["Container"],
+                "image_created": unit.attrs["Created"],  # 记录时间戳
+                "image_id": unit.attrs["Id"],
+                "image_lab": unit.attrs["Labels"],
+                "parent_id": unit.attrs["ParentId"],
+                "repo_digests": unit.attrs["RepoDigests"],
+                "repo_tags": unit.attrs["RepoTags"],
+                "shared_size": unit.attrs["SharedSize"],
+                "size": unit.attrs["Size"],
+                "virtual_size": unit.attrs["VirtualSize"],
+            }

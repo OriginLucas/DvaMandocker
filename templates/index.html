@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href={% static 'materialize/css/materialize.css' %} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src={% static 'jquery-3.3.1.js' %}></script>
+    <script src={% static 'materialize/js/materialize.js' %}></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col s3">
+            <ul id="slide-out" class="side-nav fixed collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="userView">
+                        <div class="background">
+                            <img src={% static "image/JDCloud_logo.jpg" %}>
+                        </div>
+                        <a href="#!user"><img class="circle" src={% static 'image/face1.jpg' %}></a>
+                        <a href="#!name"><span class="blue-text name">admin</span></a>
+                        <a href="#!email"><span class="blue-text email">admin@jd.com</span></a>
+                    </div>
+                    <div class="divider"></div>
+                </li>
+                <li>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header waves-effect waves-teal center-align">MONITOR</div>
+                        <div class="collection collapsible-body">
+                            <a href="/docker_manager" class="collection-item">总览</a>
+                            <a href="#!" class="collection-item">添加</a>
+                            <a href="#!" class="collection-item">连接</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header waves-effect waves-teal center-align">HOST</div>
+                        <div class="collection collapsible-body">
+                            <a href="#!" class="collection-item">总览</a>
+                            <a href="#!" class="collection-item">添加</a>
+                            <a href="#!" class="collection-item">连接</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header waves-effect waves-teal center-align">IMAGES</div>
+                        <div class="collection collapsible-body">
+                            <a href="/docker_manager/image_view" class="collection-item">总览</a>
+                            <a href="/docker_manager/image_add" class="collection-item">添加</a>
+                            <a href="/docker_manager/image_option" class="collection-item">批量操作</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header waves-effect waves-teal center-align">CONTAINERS</div>
+                        <div class="collection collapsible-body">
+                            <a href="/docker_manager/container_view" class="collection-item">总览</a>
+                            <a href="#!" class="collection-item">添加</a>
+                            <a href="#!" class="collection-item">批量操作</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header waves-effect waves-teal center-align">NETWORKS</div>
+                        <div class="collection collapsible-body">
+                            <a href="/docker_manager/network_view" class="collection-item">总览</a>
+                            <a href="#!" class="collection-item">添加</a>
+                            <a href="#!" class="collection-item">批量操作</a>
+                        </div>
+                    </li>
+                </ul>
+                </li>
+            </ul>
+{#            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>#}
+        </div>
+        <div class="col s8">
+            <div id="container" style="min-width:400px;height:400px"></div>
+            <div class="message"></div>
+        </div>
+        <div class="col s6 "></div>
+    </div>
+    <script>
+          $('.button-collapse').sideNav({
+                  menuWidth: 300, // Default is 240
+                  edge: 'left', // Choose the horizontal origin
+                  closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                  draggable: true // Choose whether you can drag to open on touch screens
+               });
+    </script>
+</body>
+</html>
